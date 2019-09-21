@@ -2,11 +2,14 @@
 document.querySelector('#button').addEventListener('click', bookSearch);
 
 function bookSearch(){
+   
     let item, title, author,  publisher, booklink, bookImage;
     let searchData = document.querySelector('#search').value;
-    let searchResults = document.querySelector("#searchResults");
+    let searchResults = document.querySelector("#searchResults");   
+    let myHeader =  document.querySelector("#header");   
     let placeholder = "https://via.placeholder.com/300";
    let url = "https://www.googleapis.com/books/v1/volumes?q=" + searchData;
+   myHeader.style.display = "none";
    fetch(url)
    .then((response) =>  response.json())
    .then((data) => {
@@ -26,6 +29,7 @@ function bookSearch(){
             </div> 
             `;
         });
+       
         document.querySelector('#searchResults').innerHTML = result;
         
    })
@@ -35,15 +39,5 @@ function bookSearch(){
     });
 }
 
-google.books.load();
-
-function initialize() {
-    let viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-    viewer.load(`ISBN: ${item.volumeInfo.industryIdentifiers[1].identifier}`);
-  }
-
-  document.querySelector('#view').addEventListener('click', initialize)
-
-  google.books.setOnLoadCallback(initialize);
-
+ 
 

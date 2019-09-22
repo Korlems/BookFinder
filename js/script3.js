@@ -16,15 +16,16 @@ function bookSearch(){
         let result = `<h2  class ="hide">items</h2>`;
         data.items.forEach(function(item){
             result += `
-            <div>
+            <div id='card'>
                 <h3>Title: ${item.volumeInfo.title}</h3>
+                <p><img  src = ${item.volumeInfo.imageLinks.thumbnail}></p>
                  <h5>Author(s): ${item.volumeInfo.authors}</h5>
                 <h5>Publisher: ${item.volumeInfo.publisher}</h5>
                 <h5>Publication  Date: ${item.volumeInfo.publishedDate}</h5>
                 <h5>ISBN: ${item.volumeInfo.industryIdentifiers[1].identifier}</h5>
-                 <p><img  src = ${item.volumeInfo.imageLinks.thumbnail}></p>
+                 
                  <br>
-                 <p><button id ='view'>Browse</button></p>
+                 <p class="hide" ><button id ='view'>Browse</button></p>
                  <br>
             </div> 
             `;

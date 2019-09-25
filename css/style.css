@@ -1,3 +1,6 @@
+ body{
+   background-color: rgb(17, 12, 4);
+ }
 #title{
     position: relative;
     margin-top: 12rem;
@@ -7,7 +10,7 @@
 #button{
     position: absolute;
     left: 56%;
-
+  background-color: #ff8a65 ;
     width: 5rem;
     height: 2rem;
 }
@@ -24,27 +27,31 @@ input{
 }
 
 #searchResults{
-    display: grid;
-    grid-gap: 1rem;
-    grid-row-gap: 1rem;
+    display: grid;    
     grid-template-columns: repeat(4, 1fr);
-    margin-left: 1rem;   
+    grid-gap: 1rem;
 }
 
-#card {
-    width: 95%;
-    height: 90%;
+#card { 
+      width: 95%;
+    height: 100%;
     padding-left: 1.5rem;
     font-style: oblique;
     color:  #eeedde;
     background: #cedce7;
-    background: -webkit-linear-gradient(45deg,  #70655f  0%,#2e373b 100%);
-    background: -o-linear-gradient(45deg,  #70655f 0%,#2e373b 100%);
-    background: linear-gradient(45deg,  #70655f  0%,#2e373b 100%);
+    background: -webkit-linear-gradient(45deg,  #5e3823  0%,#2e373b 100%);
+    background: -o-linear-gradient(45deg,  #5e3823 0%,#ceb946 100%);
+    background: linear-gradient(45deg,  #5e3823  0%,#2e373b 100%);
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(207, 129, 129, 0.2);
     transition: 0.3s;
-  }
+ }
+ .info{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-areas: 
+   'info1 info2';
+ }
   
   /* On mouse-over, add a deeper shadow */
   #card:hover {
@@ -54,15 +61,27 @@ input{
 #card h3{
     font-size:  1.5rem;
     font-weight: bold;
+    color: rgb(141, 139, 9);
 }
-
+#card h5, p{
+   
+  font-size:  1.0rem;
+  font-weight: bold;
+  line-height: 0.2em;
+  color: aliceblue
+}
 #card img{
-    width: 65%;
+    position: relative;
+    width: 95%;
+    left: 1.0rem;
 }
 
 #card img:hover{
     width: 75%;
 }
+
+ 
+
 @media screen and (max-width: 64rem){
     .containers{
       width: calc(33.333333% - 2rem);

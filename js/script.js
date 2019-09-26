@@ -29,9 +29,7 @@ function bookSearch(){
        
         document.querySelector('#searchResults').innerHTML = result;
         
-        document.getElementById("view").addEventListener("click", function(){
-            console.log(isbn);
-          });
+        
    })
     .catch(error =>{
         console.log("Something went wrong!");
